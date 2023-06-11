@@ -3,6 +3,72 @@ body {
     scroll-behavior: smooth;
 }
 
+.heading {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+
+}
+.title {
+    font-size: 1.8em;
+    /* color: #207E49;
+    text-shadow: 1px 2px 2px #207E49;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid silver;
+    background: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex; */
+}
+.content1 {
+    width: 90%;
+    margin: auto;
+}
+.form_assesment1{
+    background-color: rgba(255, 255, 255, 0.356);
+    padding-top: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 60px;
+
+    /* position: absolute;
+    width: 80%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 5px 10px 50px #207E49;
+    padding: 20px 50px; */
+}
+.form_assesment1 .input-text {
+    width: 98.5%;
+    height: 2.9em;
+    position: relative;
+    bottom: 10px;
+    top: 10px;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.option .select-box select{
+    width: 98.5%;
+    height: 2.7em;
+    position: relative;
+    bottom: 0px;
+    border-radius: 10px;
+    border: 0;
+
+}
+
+
+
 /* input[type=text],
 select {
     width: 100%;
@@ -31,10 +97,7 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-.option {
-    max-width: 1000px;
-    margin: 0 auto;
-}
+
 
 .select-box {
     width: 300px;
@@ -78,27 +141,8 @@ input[type=submit]:hover {
     overflow: hidden;
 
 }
-.title {
-    color: #207E49;
-    text-shadow: 1px 2px 2px #207E49;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid silver;
-    background: white;
-    border-radius: 50px;
-    justify-content: center;
-    align-self: center;
-    align-items: center;
-    display: flex;
-}
-.form_assesment1{
-    position: absolute;
-    width: 80%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 5px 10px 50px #207E49;
-    padding: 20px 50px;
-}
+
+
 .center {
     position: absolute;
     top: 50%;
