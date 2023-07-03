@@ -40,7 +40,7 @@
                 if ($username === "admin" && $password === "admin123") {
                     // Login successful, store user information in session and redirect to another page
                     $_SESSION["username"] = $username;
-                    header("Location: form_assesment.php"); // Replace "welcome.php" with the desired page after successful login
+                    header("Location: display.php"); // Replace "welcome.php" with the desired page after successful login
                     exit();
                 } else {
                     // Invalid username or password, display error message
