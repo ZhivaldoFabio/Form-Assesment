@@ -47,11 +47,13 @@
 
         </tr>
       </thead>
+
+      <!-- Nama,Jenis Kelamin, tanggal Masuk, Tanggal keluar, Approved/not, (Detail) -->
       <tbody>
         <?php
         include 'connection.php';
 
-        $sql = "Select * from 'warga_dampingan";
+        $sql = "Select * from warga_dampingan";
         $result = pg_query($conn, $sql);
         if ($result) {
           $row = pg_fetch_assoc($result);
