@@ -22,26 +22,28 @@
           <th scope="col">No</th>
           <th scope="col">Nama Lengkap</th>
           <th scope="col">Jenis Kelamin</th>
-          <th scope="col">Tempat Lahir</th>
-          <th scope="col">Tanggal Lahir</th>
-          <th scope="col">Alamat</th>
-          <th scope="col">Agama</th>
-          <th scope="col">Pendidikan</th>
-          <th scope="col">Status</th>
-          <th scope="col">Bekerja</th>
-          <th scope="col">Pekerjaan Pokok</th>
-          <th scope="col">Pekerjaan sampingan</th>
-          <th scope="col">Penghasilan</th>
-          <th scope="col">Anggota Keluarga</th>
-          <th scope="col">Aset Keluarga</th>
-          <th scope="col">ADL</th>
-          <th scope="col">Ekonomi</th>
-          <th scope="col">Sosial</th>
-          <th scope="col">NIK</th>
-          <th scope="col">Asal Rujukan</th>
+          <!-- <th scope="col">Tempat Lahir</th> -->
+          <!-- <th scope="col">Tanggal Lahir</th> -->
+          <!-- <th scope="col">Alamat</th> -->
+          <!-- <th scope="col">Agama</th> -->
+          <!-- <th scope="col">Pendidikan</th> -->
+          <!-- <th scope="col">Status</th> -->
+          <!-- <th scope="col">Bekerja</th> -->
+          <!-- <th scope="col">Pekerjaan Pokok</th> -->
+          <!-- <th scope="col">Pekerjaan sampingan</th> -->
+          <!-- <th scope="col">Penghasilan</th> -->
+          <!-- <th scope="col">Anggota Keluarga</th> -->
+          <!-- <th scope="col">Aset Keluarga</th> -->
+          <!-- <th scope="col">ADL</th> -->
+          <!-- <th scope="col">Ekonomi</th> -->
+          <!-- <th scope="col">Sosial</th> -->
+          <!-- <th scope="col">NIK</th> -->
+          <!-- <th scope="col">Asal Rujukan</th> -->
           <th scope="col">Tanggal Masuk</th>
           <th scope="col">Tanggal keluar</th>
           <th scope="col">Daycare / Undergoes</th>
+          <th scope="col">Approval</th>
+          <th scope="col">More</th>
 
 
 
@@ -68,19 +70,25 @@
             $education=$row['pendidikan'];
             $status=$row['status'];
             $work=$row['status'];
+            $admission=$row['tanggal_masuk'];
+            $release=$row['tanggal_keluar'];
+            $daycare=$row['daycare_undergoes'];
+
+
             
             echo '
             <tr>
             <th scope="row">'.$id.'</th>
             <td>'.$name.'</td>
             <td>'.$gender.'</td>
-            <td>'.$pob.'</td>
-            <td>'.$dob.'</td>
-            <td>'.$address.'</td>
-            <td>'.$religion.'</td>
-            <td>'.$education.'</td>
-            <td>'.$status.'</td>
-            <td>'.$work.'</td>
+            <td>'.$admission.'</td>
+            <td>'.$release.'</td>
+            <td>'.$daycare.'</td>
+            <td><input class="checkbox" type="checkbox" role="switch"></td>
+            
+            
+            
+            
             </tr>';
 
           }
@@ -104,5 +112,37 @@
   </div>
 
 </body>
+<style>
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    height: 20px;
+    width: 50px;
+    background-color: white;
+    border-radius: 5rem;
+    transition: background-color .2s;
+    box-shadow: 0 0 15px #0000001e;
+  }
+  input[type="checkbox"]::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: rgb(47, 47, 68);
+    transition: left .2s;
+  }
+  input[type="checkbox"]::checked {
+    background-color: rgb(98, 249, 173);
+  }
+  input[type="checkbox"]::checked::after {
+    left: 70%;
+  }
+</style>
 
 </html>
