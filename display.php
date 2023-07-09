@@ -19,7 +19,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID WD</th>
+          <th scope="col">No</th>
           <th scope="col">Nama Lengkap</th>
           <th scope="col">Jenis Kelamin</th>
           <th scope="col">Tempat Lahir</th>
@@ -53,22 +53,41 @@
         <?php
         include 'connection.php';
 
-        $sql = "Select * from warga_dampingan";
+        $sql = "Select * from warga_dampingan ORDER BY id_wd ASC";
         $result = pg_query($conn, $sql);
         if ($result) {
-          $row = pg_fetch_assoc($result);
-          echo $row['nama_lengkap'];
-          $row = pg_fetch_assoc($result);
-          echo $row['nama_lengkap'];
+        
+          while($row=pg_fetch_assoc($result)){
+            $id=$row['id_wd'];
+            $name=$row['nama_lengkap'];
+            $gender=$row['jenis_kelamin'];
+            $pob=$row['tempat_lahir'];
+            $dob=$row['tanggal_lahir'];
+            $address=$row['alamat'];
+            $religion=$row['agama'];
+            $education=$row['pendidikan'];
+            $status=$row['status'];
+            $work=$row['status'];
+            
+            echo '
+            <tr>
+            <th scope="row">'.$id.'</th>
+            <td>'.$name.'</td>
+            <td>'.$gender.'</td>
+            <td>'.$pob.'</td>
+            <td>'.$dob.'</td>
+            <td>'.$address.'</td>
+            <td>'.$religion.'</td>
+            <td>'.$education.'</td>
+            <td>'.$status.'</td>
+            <td>'.$work.'</td>
+            </tr>';
+
+          }
         }
         ?>
 
-        <!-- <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
+        <!-- 
         <tr>
           <th scope="row">2</th>
           <td>Jacob</td>
