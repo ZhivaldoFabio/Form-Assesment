@@ -55,7 +55,10 @@
         <?php
         include 'connection.php';
 
-        $sql = "Select * from warga_dampingan ORDER BY id_wd ASC";
+        $id=$_GET['detailid'];
+        $sql = "SELECT id_wd, nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah
+        FROM warga_dampingan
+        WHERE id_wd=$id;";
         $result = pg_query($conn, $sql);
         if ($result) {
         
