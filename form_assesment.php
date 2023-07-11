@@ -34,8 +34,8 @@
                         <div class="select-box">
                             <select class="form-select" name="gender" id="jenis_kelamin">
                                 <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
-                                <option value="Pria">Pria</option>
-                                <option value="Wanita">Wanita</option>
+                                <option value="Laki-laki">Pria</option>
+                                <option value="Perempuan">Wanita</option>
                                 <option value="Lainnya">Lainnya</option>
                             </select>
                         </div>
@@ -210,14 +210,14 @@
                     <label class="form-label">Ada riwayat perilaku menyakiti diri sendiri / orang lain?</label>
                     <div class="form-check">
                         <input type="radio" name="menyakiti" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <label class="form-check-label">
                             Ya
                         </label>
                     </div>
 
                     <div class="form-check">
                         <input type="radio" name="menyakiti" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <label class="form-check-label">
                             Tidak
                         </label>
                     </div>
@@ -228,16 +228,37 @@
 
                 <div class="mb-3">
                     <label class="form-label">Ada riwayat menyendiri?</label>
-                    <input type="radio" name="menyendiri" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="menyendiri" class="larger">&nbsp&nbsp&nbspTidak
+                    <div class="form-check">
+                        <input type="radio" name="menyendiri" class="form-check-input">
+                        <label class="form-check-label">
+                            Ya
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" name="menyendiri" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
 
                 <div class="mb-3">
                     <label class="form-label">Ada riwayat melarikan diri?</label>
-                    <input type="radio" name="melarikan" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="melarikan" class="larger">&nbsp&nbsp&nbspTidak
+                    <div class="form-check">
+                        <input type="radio" name="melarikan" class="form-check-input">
+                        <label class="form-check-label">
+                            Ya
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="melarikan" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
@@ -278,16 +299,36 @@
 
                 <div class="mb-3">
                     <label class="form-label">Apakah mengkonsumsi obat?</label>
-                    <input type="radio" name="obat" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="obat" class="larger">&nbsp&nbsp&nbspTidak
+                    <div class="form-check">
+                        <input type="radio" name="obat" class="form-check-input">
+                        <label class="form-check-label">
+                            Ya
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="obat" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
 
                 <div class="mb-3">
                     <label class="form-label">Frekuensi minum obat?</label>
-                    <input type="radio" name="frekuensi" class="larger">&nbsp&nbsp&nbspTeratur
-                    <input type="radio" name="frekuensi" class="larger">&nbsp&nbsp&nbspTidak teratur
+                    <div class="form-check">
+                        <input type="radio" name="frekuensi" class="form-check-input">
+                        <label class="form-check-label">
+                            Teratur
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="frekuensi" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak teratur
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
@@ -295,10 +336,22 @@
                 <div class="mb-3">
                     <label id="head2">Pengobatan dimana saja?</label>
                     <div id="content2">
-                        <input type="checkbox" name="pengobatan" class="larger"><label for="pengobatan_1">&nbsp&nbsp&nbspAlternatif/orang pintar</label>
-                        <input type="checkbox" name="pengobatan" class="larger"><label for="pengobatan_2">&nbsp&nbsp&nbspPuskesmas</label>
-                        <input type="checkbox" name="pengobatan" class="larger"><label for="pengobatan_3">&nbsp&nbsp&nbspRummah Sakit</label>
-                        <input type="checkbox" name="pengobatan" class="larger"><label for="pengobatan_4">&nbsp&nbsp&nbspBelum pernah berobat</label>
+                        <div class="form-check">
+                            <input type="checkbox" name="pengobatan" class="form-check-input">
+                            <label for="pengobatan" class="form-check-label">Alternatif/orang pintar</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="pengobatan" class="form-check-input">
+                            <label for="pengobatan" class="form-check-label">Puskesmas</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="pengobatan" class="form-check-input">
+                            <label for="pengobatan" class="form-check-label">Rummah Sakit</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="pengobatan" class="form-check-input">
+                            <label for="pengobatan" class="form-check-label">Belum pernah berobat</label>
+                        </div>
                     </div>
                 </div>
 
@@ -323,8 +376,18 @@
 
                 <div class="mb-3">
                     <label class="form-label">Apakah bekerja?</label>
-                    <input type="radio" name="bekerja_1" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="bekerja_2" class="larger">&nbsp&nbsp&nbspTidak
+                    <div class="form-check">
+                        <input type="radio" name="bekerja" class="form-check-input">
+                        <label class="form-check-label">
+                            Ya
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="bekerja" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
@@ -338,133 +401,223 @@
 
                 <div class="mb-3">
                     <label class="form-label">Apakah memiliki pekerjaan sampingan?</label>
-                    <input type="radio" name="sampingan_1" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="sampingan_2" class="larger">&nbsp&nbsp&nbspTidak
+                    <div class="form-check">
+                        <input type="radio" name="sampingan" class="form-check-input">
+                        <label class="form-check-label">
+                            Ya
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="sampingan" class="form-check-input">
+                        <label class="form-check-label">
+                            Tidak
+                        </label>
+                    </div>
                 </div>
 
                 <!-- ==================================================================================================== -->
 
                 <div class="mb-3">
                     <label class="form-label">Penghasilan perbulan?</label>
-                    <input type="radio" name="penghasilan_1" class="larger">&nbsp&nbsp&nbsp≤ 1 juta
-                    <input type="radio" name="penghasilan_2" class="larger">&nbsp&nbsp&nbsp> 1 juta
+                    <div class="form-check">
+                        <input type="radio" name="penghasilan" class="form-check-input">
+                        <label class="form-check-label"> ≤ 1 juta </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="penghasilan" class="form-check-input">
+                        <label class="form-check-label"> > 1 juta </label>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <label class="form-label">Berapa jumlah anggota di rumah? Siapa saja yang bekerja?</label>
+                        <input type="text" name="jumlah_anggota" placeholder="Masukkan Jumlah Anggota" class="form-control">
+                    </div>
+
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apa saja aset yang dimiliki keluarga? </p>
+                        <div class="form-check">
+                            <input type="checkbox" name="aset" class="form-check-input">
+                            <label for="aset">Motor/mobil/sepeda</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="aset" class="form-check-input">
+                            <label for="aset">Ternak</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="aset" class="form-check-input">
+                            <label for="aset">Warung/Toko/Tabungan</label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah mendapat bantuan? </p>
+                        <div class="form-check">
+                            <input type="checkbox" name="bantuan" class="form-check-input"><label for="bantuan">Pemerintah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="bantuan" class="form-check-input"><label for="bantuan">Swasta</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="bantuan" class="form-check-input"><label for="bantuan">Orang lain</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="bantuan" class="form-check-input"><label for="bantuan" class="form-check-label">Tidak dapat</label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah memiliki asuransi? </p>
+                        <div class="form-check">
+                            <input type="checkbox" name="asuransi" class="form-check-input"><label for="asuransi">KIS</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="asuransi" class="form-check-input"><label for="asuransi">BPJS MANDIRI</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="asuransi" class="form-check-input"><label for="asuransi">Asuransi lainnya</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="asuransi" class="form-check-input"><label for="asuransi" class="form-check-label">Tidak memiliki</label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah tergabung dalam komunitas/ kelompok kerja? </p>
+                        <div class="form-check">
+                            <input type="checkbox" name="komunitas" class="form-check-input"><label for="komunitas">Kelompok Tani</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="komunitas" class="form-check-input"><label for="komunitas">Arisan</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="komunitas" class="form-check-input"><label for="komunitas">Koperasi</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="komunitas" class="form-check-input"><label for="komunitas">Komunitas lainnya</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" name="komunitas" class="form-check-input"><label for="komunitas" class="form-check-label">Tidak tergabung</label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <label class="form-label">Dukungan yang sudah diberikan pada warga dampingan</label>
+                        <input type="text" name="dukungan" placeholder="Jenis Dukungan" class="form-control">
+                    </div>
+
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah warga dampingan memiliki KTP? </p>
+                        <div class="form-check">
+                            <input type="radio" name="ktp" class="form-check-input">
+                            <label class="form-check-label">
+                                Ya
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="ktp" class="form-check-input">
+                            <label class="form-check-label">
+                                Tidak
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah tercantum di Kartu Keluarga? </p>
+                        <div class="form-check">
+                            <input type="radio" name="kk" class="form-check-input">
+                            <label class="form-check-label">
+                                Ya
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="kk" class="form-check-input">
+                            <label class="form-check-label">
+                                Tidak
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah warga dampingan pernah bekerja? </p>
+                        <div class="form-check">
+                            <input type="radio" name="pernahwork" class="form-check-input">
+                            <label class="form-check-label">
+                                Pernah
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="pernahwork" class="form-check-input">
+                            <label class="form-check-label">
+                                Belum
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <p>Apakah pernah mendapatkan gaji? </p>
+                        <div class="form-check">
+                            <input type="radio" name="gaji" class="form-check-input">
+                            <label class="form-check-label">
+                                Pernah
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="gaji" class="form-check-input">
+                            <label class="form-check-label">
+                                Belum
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="mb-3">
+                        <label class="form-label">Rencana keluarga untuk warga dampingan kedepannya:</label>
+                        <label class="form-label">Medis</label>
+                        <input type="text" name="medis" placeholder="Masukkan Rencana Medis" class="form-control">
+                        <label class="form-label">ADL</label>
+                        <input type="text" name="adl" placeholder="Masukkan Rencana ADL" class="form-control">
+                        <label class="form-label">Ekonomi</label>
+                        <input type="text" name="ekonomi" placeholder="Masukkan Rencana Ekonomi" class="form-control">
+                        <label class="form-label">Sosial</label>
+                        <input type="text" name="sosial" placeholder="Masukkan Rencana Sosial" class="form-control">
+                    </div>
+
+
+                    <!-- ==================================================================================================== -->
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" name="submit">Submit</button>
+                    </div>
+
+                    <p>Catatan:</p>
+                    <p>Medis: rutin minum obat, rutin kontrol, terapi, konsultasi/konseling</p>
+                    <p>Activity Daily Living: dilatih mandi, makan minum, kebersihan diri/lingkungan agar mandiri</p>
+                    <p>Ekonomi: dilibatkan kegiatan produktif, melakukan pekerjaan yang menghasilkan uang/tidak</p>
+                    <p>Sosial: dilibatkan kegiatan sosial, kerja bakti, kegiatan refreshing</p>
                 </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <label class="form-label">Berapa jumlah anggota di rumah? Siapa saja yang bekerja?</label>
-                    <input type="text" name="jumlah_anggota" placeholder="Masukkan Jumlah Anggota" class="form-control">
-                </div>
-
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apa saja aset yang dimiliki keluarga? </p>
-                    <input type="checkbox" name="aset_1" class="larger"><label for="aset_1">&nbsp&nbsp&nbspMotor/mobil/sepeda</label>
-                    <input type="checkbox" name="aset_2" class="larger"><label for="aset_2">&nbsp&nbsp&nbspTernak</label>
-                    <input type="checkbox" name="aset_3" class="larger"><label for="aset_3">&nbsp&nbsp&nbspWarung/Toko/Tabungan</label>
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah mendapat bantuan? </p>
-                    <input type="checkbox" name="bantuan_1" class="larger"><label for="bantuan_1">&nbsp&nbsp&nbspPemerintah</label>
-                    <input type="checkbox" name="bantuan_2" class="larger"><label for="bantuan_2">&nbsp&nbsp&nbspSwasta</label>
-                    <input type="checkbox" name="bantuan_3" class="larger"><label for="bantuan_3">&nbsp&nbsp&nbspOrang lain</label>
-                    <input type="checkbox" name="bantuan_4" class="larger"><label for="bantuan_4">&nbsp&nbsp&nbspTidak dapat</label>
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah memiliki asuransi? </p>
-                    <input type="checkbox" name="asuransi_1" class="larger"><label for="asuransi_1">&nbsp&nbsp&nbspKIS</label>
-                    <input type="checkbox" name="asuransi_2" class="larger"><label for="asuransi_2">&nbsp&nbsp&nbspBPJS MANDIRI</label>
-                    <input type="checkbox" name="asuransi_3" class="larger"><label for="asuransi_3">&nbsp&nbsp&nbspAsuransi lainnya</label>
-                    <input type="checkbox" name="asuransi_4" class="larger"><label for="asuransi_4">&nbsp&nbsp&nbspTidak memiliki</label>
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah tergabung dalam komunitas/ kelompok kerja? </p>
-                    <input type="checkbox" name="komunitas_1" class="larger"><label for="komunitas_1">&nbsp&nbsp&nbspKelompok Tani</label>
-                    <input type="checkbox" name="komunitas_2" class="larger"><label for="komunitas_2">&nbsp&nbsp&nbspArisan</label>
-                    <input type="checkbox" name="komunitas_3" class="larger"><label for="komunitas_3">&nbsp&nbsp&nbspKoperasi</label>
-                    <input type="checkbox" name="komunitas_4" class="larger"><label for="komunitas_4">&nbsp&nbsp&nbspKomunitas lainnya</label>
-                    <input type="checkbox" name="komunitas_5" class="larger"><label for="komunitas_5">&nbsp&nbsp&nbspTidak tergabung</label>
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <label class="form-label">Dukungan yang sudah diberikan pada warga dampingan</label>
-                    <input type="text" name="dukungan" placeholder="Jenis Dukungan" class="form-control">
-                </div>
-
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah warga dampingan memiliki KTP? </p>
-                    <input type="radio" name="ktp_1" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="ktp_2" class="larger">&nbsp&nbsp&nbspTidak
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah tercantum di Kartu Keluarga? </p>
-                    <input type="radio" name="kk_1" class="larger">&nbsp&nbsp&nbspYa
-                    <input type="radio" name="kk_2" class="larger">&nbsp&nbsp&nbspTidak
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah warga dampingan pernah bekerja? </p>
-                    <input type="radio" name="pernahwork_1" class="larger">&nbsp&nbsp&nbspPernah
-                    <input type="radio" name="pernahwork_2" class="larger">&nbsp&nbsp&nbspBelum
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <p>Apakah pernah mendapatkan gaji? </p>
-                    <input type="radio" name="gaji_1" class="larger">&nbsp&nbsp&nbspPernah
-                    <input type="radio" name="gaji_2" class="larger">&nbsp&nbsp&nbspBelum
-                </div>
-
-                <!-- ==================================================================================================== -->
-
-                <div class="mb-3">
-                    <label class="form-label">Rencana keluarga untuk warga dampingan kedepannya:</label>
-                    <label class="form-label">Medis</label>
-                    <input type="text" name="medis" placeholder="Masukkan Rencana Medis" class="form-control">
-                    <label class="form-label">ADL</label>
-                    <input type="text" name="adl" placeholder="Masukkan Rencana ADL" class="form-control">
-                    <label class="form-label">Ekonomi</label>
-                    <input type="text" name="ekonomi" placeholder="Masukkan Rencana Ekonomi" class="form-control">
-                    <label class="form-label">Sosial</label>
-                    <input type="text" name="sosial" placeholder="Masukkan Rencana Sosial" class="form-control">
-                </div>
-
-
-                <!-- ==================================================================================================== -->
-
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" name="submit">Submit</button>
-                </div>
-
-                <p>Catatan:</p>
-                <p>Medis: rutin minum obat, rutin kontrol, terapi, konsultasi/konseling</p>
-                <p>Activity Daily Living: dilatih mandi, makan minum, kebersihan diri/lingkungan agar mandiri</p>
-                <p>Ekonomi: dilibatkan kegiatan produktif, melakukan pekerjaan yang menghasilkan uang/tidak</p>
-                <p>Sosial: dilibatkan kegiatan sosial, kerja bakti, kegiatan refreshing</p>
-            </div>
         </form>
 
     </div>
