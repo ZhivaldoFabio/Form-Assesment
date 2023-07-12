@@ -1,0 +1,70 @@
+viewport
+name
+gender
+pob
+dob
+address
+agama
+Pendidikan
+relation
+Asses melihat
+Asses mendengar
+Asses berjalan
+Asses rawat
+Asses komunikasi
+diagnose
+menyakiti
+menyakiti
+menyendiri
+menyendiri
+melarikan
+melarikan
+Asses gejala
+obat
+obat
+frekuensi
+frekuensi
+pengobatan
+pengobatan
+pengobatan
+pengobatan
+rumahsakit
+permasalahan
+bekerja
+bekerja
+pekerjaan_pokok
+sampingan
+sampingan
+penghasilan
+penghasilan
+jumlah_anggota
+aset
+aset
+aset
+bantuan
+bantuan
+bantuan
+bantuan
+asuransi
+asuransi
+asuransi
+asuransi
+komunitas
+komunitas
+komunitas
+komunitas
+komunitas
+dukungan
+ktp
+ktp
+kk
+kk
+pernahwork
+pernahwork
+gaji
+gaji
+medis
+adl
+ekonomi
+sosial
+submit

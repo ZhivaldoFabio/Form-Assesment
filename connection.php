@@ -9,7 +9,6 @@ $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pa
 
 try {
     $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-    echo "Connected to the database successfully.";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
