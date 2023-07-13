@@ -21,8 +21,15 @@
             <div id="content1">
                 <!-- ==================================================================================================== -->
                 <div class="mb-3">
+                    <label class="form-label">NIK</label>
+                    <input type="text" name="nik" placeholder="Masukkan NIK" class="form-control" required>
+                </div>
+
+
+                <!-- ==================================================================================================== -->
+                <div class="mb-3">
                     <label class="form-label">Nama Lengkap</label>
-                    <input type="text" name="name" placeholder="Masukkan Nama Lengkap" class="form-control">
+                    <input type="text" name="name" placeholder="Masukkan Nama Lengkap" class="form-control" required>
                 </div>
 
 
@@ -32,7 +39,7 @@
                     <label class="form-label">Jenis Kelamin</label>
                     <div class="option">
                         <div class="select-box">
-                            <select class="form-select" name="gender" id="jenis_kelamin">
+                            <select class="form-select" name="gender" id="jenis_kelamin" required>
                                 <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
                                 <option value="Laki-laki">Pria</option>
                                 <option value="Perempuan">Wanita</option>
@@ -48,9 +55,9 @@
                     <label class="form-label">Tempat, Tanggal Lahir</label>
                     <div class="input-group">
                         <span class="input-group-text">Tempat</span>
-                        <input type="text" name="pob" placeholder="Masukkan Tempat Lahir" class="form-control">
+                        <input type="text" name="pob" placeholder="Masukkan Tempat Lahir" class="form-control" required>
                         <span class="input-group-text">Tanggal lahir</span>
-                        <input type="date" name="dob" placeholder="Masukkan Tanggal Lahir" class="form-control">
+                        <input type="date" name="dob" placeholder="Masukkan Tanggal Lahir" class="form-control" required>
                     </div>
 
                 </div>
@@ -121,6 +128,13 @@
                             </select>
                         </div>
                     </div>
+                </div>
+
+                <!-- ==================================================================================================== -->
+
+                <div class="mb-3">
+                    <label class="form-label">Asal Rujukan</label>
+                    <input type="text" name="asal_rujukan" placeholder="Masukkan asal rujukan" class="form-control">
                 </div>
 
                 <!-- ==================================================================================================== -->
@@ -544,13 +558,13 @@
                     <div class="mb-3">
                         <p>Apakah warga dampingan memiliki KTP? </p>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value="true">
+                            <input type="radio" name="ktp" class="form-check-input" value=TRUE>
                             <label class="form-check-label">
                                 Ya
                             </label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value="false">
+                            <input type="radio" name="ktp" class="form-check-input" value=TRUE>
                             <label class="form-check-label">
                                 Tidak
                             </label>
@@ -656,59 +670,59 @@
     include 'connection.php';
     if (isset($_POST['submit'])) {
         // $ = $_POST[''];
-        $name = $_POST['name'];
-        $gender = $_POST['gender'];
-        $pob = $_POST['pob'];
-        $dob = $_POST['dob'];
-        $address = $_POST['address'];
-        $religion = $_POST['agama'];
-        $education = $_POST['Pendidikan'];
-        $status = $_POST['relation'];
-        $melihat = $_POST['Asses melihat'];
-        $mendengar = $_POST['Asses mendengar'];
-        $berjalan = $_POST['Asses berjalan'];
-        $rawat = $_POST['Asses rawat'];
-        $komunikasi = $_POST['Asses komunikasi'];
-        $diagnose = $_POST['diagnose'];
-        $menyakiti = $_POST['menyakiti'];
-        $menyendiri = $_POST['menyendiri'];
-        $melarikan = $_POST['melarikan'];
-        $gejala = $_POST['Asses gejala'];
-        $obat = $_POST['obat'];
-        $frekuensi = $_POST['frekuensi'];
-        $pengobatan = $_POST['pengobatan'];
-        $rumahsakit = $_POST['rumahsakit'];
-        $permasalahan = $_POST['permasalahan'];
-        $does_work = $_POST['bekerja'];
-        $main_job = $_POST['pekerjaan_pokok'];
-        $alt_job = $_POST['sampingan'];
-        $income = $_POST['penghasilan'];
-        $fam_member = $_POST['jumlah_anggota'];
-        $assets = $_POST['aset'];
-        $bantuan = $_POST['bantuan'];
-        $asuransi = $_POST['asuransi'];
-        $komunitas = $_POST['komunitas'];
-        $dukungan = $_POST['dukungan'];
-        $ktp = $_POST['ktp'];
-        $kk = $_POST['kk'];
-        $pernahwork = $_POST['pernahwork'];
-        $gaji = $_POST['gaji'];
-        $medis = $_POST['medis'];
-        $adl = $_POST['adl'];
-        $economy = $_POST['ekonomi'];
-        $social = $_POST['sosial'];
-        $nik = $_POST['nik'];
-        $source = $_POST['asak_rujukan'];
-        $admission = $_POST['tanggal_masuk'];
-        $release = $_POST['tanggal_keluar'];
-        $daycare = $_POST['daycare'];
-        $main_after = $_POST['pokok_sesudah'];
-        $alt_after = $_POST['sampingan_sesudah'];
+        $name = $_POST['name'] ?? null;
+        $gender = $_POST['gender'] ?? null;
+        $pob = $_POST['pob'] ?? null;
+        $dob = $_POST['dob'] ?? null;
+        $address = $_POST['address'] ?? null;
+        $religion = $_POST['agama'] ?? null;
+        $education = $_POST['Pendidikan'] ?? null;
+        $status = $_POST['relation'] ?? null;
+        // $melihat = $_POST['Asses melihat'];
+        // $mendengar = $_POST['Asses mendengar'];
+        // $berjalan = $_POST['Asses berjalan'];
+        // $rawat = $_POST['Asses rawat'];
+        // $komunikasi = $_POST['Asses komunikasi'];
+        $diagnose = $_POST['diagnose'] ?? null;
+        $menyakiti = $_POST['menyakiti'] ?? null;
+        $menyendiri = $_POST['menyendiri'] ?? null;
+        $melarikan = $_POST['melarikan'] ?? null;
+        // $gejala = $_POST['Asses gejala'];
+        $obat = $_POST['obat'] ?? null;
+        // $frekuensi = $_POST['frekuensi'];
+        $pengobatan = $_POST['pengobatan'] ?? null;
+        $rumahsakit = $_POST['rumahsakit'] ?? null;
+        $permasalahan = $_POST['permasalahan'] ?? null;
+        $does_work = $_POST['bekerja'] ?? null;
+        $main_job = $_POST['pekerjaan_pokok'] ?? null;
+        $alt_job = $_POST['sampingan'] ?? null;
+        $income = $_POST['penghasilan'] ?? null;
+        $fam_member = $_POST['jumlah_anggota'] ?? null;
+        $assets = $_POST['aset'] ?? null;
+        $bantuan = $_POST['bantuan'] ?? null;
+        $asuransi = $_POST['asuransi'] ?? null;
+        $komunitas = $_POST['komunitas'] ?? null;
+        $dukungan = $_POST['dukungan'] ?? null;
+        $ktp = $_POST['ktp'] ?? null;
+        $kk = $_POST['kk'] ?? null;
+        $pernahwork = $_POST['pernahwork'] ?? null;
+        $gaji = $_POST['gaji'] ?? null;
+        $medis = $_POST['medis'] ?? null;
+        $adl = $_POST['adl'] ?? null;
+        $economy = $_POST['ekonomi'] ?? null;
+        $social = $_POST['sosial'] ?? null;
+        $nik = $_POST['nik'] ?? null;
+        $source = $_POST['asal_rujukan'] ?? null;
+        $admission = date('Y-M-D');
+        $release = null;
+        $daycare = $_POST['daycare'] ?? null;
+        $main_after = $_POST['pokok_sesudah'] ?? null;
+        $alt_after = $_POST['sampingan_sesudah'] ?? null;
 
         $sql = "INSERT INTO warga_dampingan
         (nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah)
-        VALUES('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', '$status', $does_work, '$main_job', '$alt_job', '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', '$admission', $release, '$daycare', NULL, NULL);
-        ";
+        VALUES ('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', '$status', $does_work, '$main_job', '$alt_job', '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', '$admission', '$release', $daycare, '$main_after', '$alt_after');";
+
         $result = pg_query($conn, $sql);
         if ($result) {
             echo "Data Inserted Successfully";
