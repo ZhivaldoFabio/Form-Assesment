@@ -1,96 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include 'connection.php';
+$id_wd = $_GET['detailid'];
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Satunama</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
 
-<body>
+$sql = "SELECT id_wd, nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah
+FROM public.warga_dampingan
+WHERE id_wd=$id_wd;
+";
+$result = pg_query($conn, $sql);
+if ($result) {
 
-  <div class="container">
-    <button class="btn btn-primary m-5 ">
-      <a href="form_assesment.php" class="text-light link-underline link-underline-opacity-0">
-        Tambahkan WD
-      </a>
-    </button>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama Lengkap</th>
-          <th scope="col">Jenis Kelamin</th>
-          <!-- <th scope="col">Tempat Lahir</th> -->
-          <!-- <th scope="col">Tanggal Lahir</th> -->
-          <!-- <th scope="col">Alamat</th> -->
-          <!-- <th scope="col">Agama</th> -->
-          <!-- <th scope="col">Pendidikan</th> -->
-          <!-- <th scope="col">Status</th> -->
-          <!-- <th scope="col">Bekerja</th> -->
-          <!-- <th scope="col">Pekerjaan Pokok</th> -->
-          <!-- <th scope="col">Pekerjaan sampingan</th> -->
-          <!-- <th scope="col">Penghasilan</th> -->
-          <!-- <th scope="col">Anggota Keluarga</th> -->
-          <!-- <th scope="col">Aset Keluarga</th> -->
-          <!-- <th scope="col">ADL</th> -->
-          <!-- <th scope="col">Ekonomi</th> -->
-          <!-- <th scope="col">Sosial</th> -->
-          <!-- <th scope="col">NIK</th> -->
-          <!-- <th scope="col">Asal Rujukan</th> -->
-          <th scope="col">Tanggal Masuk</th>
-          <th scope="col">Tanggal keluar</th>
-          <th scope="col">Daycare / Undergoes</th>
-          <th scope="col">Approval</th>
-          <th scope="col">More</th>
+  while ($row = pg_fetch_assoc($result)) {
+    $id = $row['id_wd'];
+    $name = $row['nama_lengkap'];
+    $gender = $row['jenis_kelamin'];
+    $pob = $row['tempat_lahir'];
+    $dob = $row['tanggal_lahir'];
+    $address = $row['alamat'];
+    $religion = $row['agama'];
+    $education = $row['pendidikan'];
+    $status = $row['status'];
+    $work = $row['status'];
+    $admission = $row['tanggal_masuk'];
+    $release = $row['tanggal_keluar'];
+    $daycare = $row['daycare_undergoes'];
 
 
 
-        </tr>
-      </thead>
-
-      <!-- Nama,Jenis Kelamin, tanggal Masuk, Tanggal keluar, Approved/not, (Detail) -->
-      <tbody>
-        <?php
-        include 'connection.php';
-
-        $id=$_GET['detailid'];
-        $sql = "SELECT id_wd, nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah
-        FROM warga_dampingan
-        WHERE id_wd=$id;";
-        $result = pg_query($conn, $sql);
-        if ($result) {
-        
-          while($row=pg_fetch_assoc($result)){
-            $id=$row['id_wd'];
-            $name=$row['nama_lengkap'];
-            $gender=$row['jenis_kelamin'];
-            $pob=$row['tempat_lahir'];
-            $dob=$row['tanggal_lahir'];
-            $address=$row['alamat'];
-            $religion=$row['agama'];
-            $education=$row['pendidikan'];
-            $status=$row['status'];
-            $work=$row['status'];
-            $admission=$row['tanggal_masuk'];
-            $release=$row['tanggal_keluar'];
-            $daycare=$row['daycare_undergoes'];
-
-
-            
-            echo '
+    echo '
             <tr>
-            <th scope="row">'.$id.'</th>
-            <td>'.$name.'</td>
-            <td>'.$gender.'</td>
-            <td>'.$admission.'</td>
-            <td>'.$release.'</td>
-            <td>'.$daycare.'</td>
+            <th scope="row">' . $id . '</th>
+            <td>' . $name . '</td>
+            <td>' . $gender . '</td>
+            <td>' . $admission . '</td>
+            <td>' . $release . '</td>
+            <td>' . $daycare . '</td>
             <td><input class="checkbox" type="checkbox" role="switch"></td>
             <td>
-            <button type="button" class="btn btn-info"><a href="detail.php? detailid='.$id.'" class="text-light link-underline link-underline-opacity-0">Detail</a></button>
-            <button type="button" class="btn btn-danger"><a href="delete.php? deleteid='.$id.'" class="text-light link-underline link-underline-opacity-0">Delete</a></button>
+            <button type="button" class="btn btn-info"><a href="detail.php? detailid=' . $id . '" class="text-light link-underline link-underline-opacity-0">Detail</a></button>
+            <button type="button" class="btn btn-danger"><a href="delete.php? deleteid=' . $id . '" class="text-light link-underline link-underline-opacity-0">Delete</a></button>
             </td>
 
             
@@ -98,59 +48,262 @@
             
             
             </tr>';
+  }
+}
+?>
 
-          }
-        }
-        ?>
 
-        <!-- 
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr> -->
-      </tbody>
-    </table>
-  </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail WD</title>
+  <!-- <link rel="stylesheet" href="stylesheet.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- ============================== JUDULNYA DISINI ============================== -->
+    <div class="heading">
+      <h1 class="title display-3">Detail Warga Dampingan</h1>
+      <hr width="100%">
+    </div>
+    <!-- ==================================================================================================== -->
+
+    <table class="table">
+      <tr>
+        <td>[Data Diri Warga Dampingan] </td>
+
+      </tr>
+      <tr>
+        <td>Nama Lengkap </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>Jenis Kelamin </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>Tempat, Tanggal Lahir </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>Alamat </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>Agama </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>Pendidikan </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td> Status </td>
+        <td>:</td>
+        <?php echo "<td> $name </td>" ?>
+
+      </tr>
+      <tr>
+        <td>[Washington Group Questions] </td>
+
+      </tr>
+      <tr>
+        <td>Apakah anda memiliki kesulitan MELIHAT meskipun sudah menggunakan kacamata? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah anda memiliki kesulitan MENDENGAR meskipun sudah menggunakan alat bantu dengar? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah anda memiliki kesulitan BERJALAN atau naik turun tangga? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah anda memiliki kesulitan dengan RAWAT DIRI seperti mencuci atau berpakaian? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Memakai bahasa keseharian apakah anda memiliki kesulitan BERKOMUNIKASI, paham atau dipahami lawan
+          bicara? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>[Riwayat Kesehatan] </td>
+      </tr>
+      <tr>
+        <td>Diagnosis yang diketahui </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Ada riwayat perilaku menyakiti diri sendiri / orang lain?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Ada riwayat menyendiri? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Ada riwayat melarikan diri? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Ada riwayat kecenderungan bunuh diri? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Frekuensi kemunculan gejala </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah mengkonsumsi obat? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Frekuensi minum obat? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Pengobatan dimana saja?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Berapa kali masuk Rumah Sakit?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Permasalahan/Kesulitan saat ini</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>[Dukungan Keluarga] </td>
+
+      </tr>
+      <tr>
+        <td>Apakah bekerja? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apa Pekerjaan Pokoknya?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah memiliki pekerjaan sampingan? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Penghasilan perbulan? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Berapa jumlah anggota di rumah? Siapa saja yang bekerja? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apa saja aset yang dimiliki keluarga? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah mendapat bantuan? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah memiliki asuransi?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah tergabung dalam komunitas/ kelompok kerja? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Dukungan yang sudah diberikan pada warga dampingan </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah warga dampingan memiliki KTP? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah tercantum di Kartu Keluarga?</td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah warga dampingan pernah bekerja? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Apakah pernah mendapatkan gaji? </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Rencana keluarga untuk warga dampingan kedepannya </td>
+
+      </tr>
+      <tr>
+        <td>Medis </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>ADL </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Ekonomi </td>
+        <td>:</td>
+
+      </tr>
+      <tr>
+        <td>Sosial </td>
+        <td>:</td>
+
+      </tr>
+
 
 </body>
-<style>
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: relative;
-    height: 20px;
-    width: 50px;
-    background-color: white;
-    border-radius: 5rem;
-    transition: background-color .2s;
-    box-shadow: 0 0 15px #0000001e;
-  }
-  input[type="checkbox"]::after {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    background-color: rgb(47, 47, 68);
-    transition: left .2s;
-  }
-  input[type="checkbox"]::checked {
-    background-color: rgb(98, 249, 173);
-  }
-  input[type="checkbox"]::checked::after {
-    left: 70%;
-  }
-</style>
 
-</html>

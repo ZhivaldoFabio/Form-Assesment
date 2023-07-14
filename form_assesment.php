@@ -15,6 +15,7 @@
         <!-- ============================== JUDULNYA DISINI ============================== -->
         <div class="heading">
             <h1 class="title display-3">Form Assesment</h1>
+            <hr width="100%">
         </div>
         <!-- ============================== FORM NYA DISINI ============================== -->
         <form class="form_assesment1" method="post">
@@ -300,14 +301,14 @@
                         <label class="input-group-text" for="inputGroupSelect01">Ucapan/Tulisan</label>
                         <select class="form-select" id="inputGroupSelect01">
                             <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
-                            <option value="Ya">Ya</option>
-                            <option value="Tidak">Tidak</option>
+                            <option value="true">Ya</option>
+                            <option value="false">Tidak</option>
                         </select>
                         <label class="input-group-text" for="inputGroupSelect01">Perilaku</label>
                         <select class="form-select" id="inputGroupSelect01">
                             <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
-                            <option value="Ya">Ya</option>
-                            <option value="Tidak">Tidak</option>
+                            <option value="true">Ya</option>
+                            <option value="false">Tidak</option>
                         </select>
                     </div>
                 </div>
@@ -334,13 +335,13 @@
                 <div class="mb-3">
                     <label class="form-label">Apakah mengkonsumsi obat?</label>
                     <div class="form-check">
-                        <input type="radio" name="obat" class="form-check-input" value="Ya">
+                        <input type="radio" name="obat" class="form-check-input" value="true">
                         <label class="form-check-label">
                             Ya
                         </label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" name="obat" class="form-check-input" value="Tidak">
+                        <input type="radio" name="obat" class="form-check-input" value="false">
                         <label class="form-check-label">
                             Tidak
                         </label>
@@ -520,7 +521,7 @@
                             <input type="checkbox" name="asuransi" class="form-check-input" value="Asuransi Lainnya"><label for="asuransi">Asuransi lainnya</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" name="asuransi" class="form-check-input" value="Tidak"><label for="asuransi" class="form-check-label">Tidak memiliki</label>
+                            <input type="checkbox" name="asuransi" class="form-check-input" value="Tidak memiliki"><label for="asuransi" class="form-check-label">Tidak memiliki</label>
                         </div>
                     </div>
 
@@ -558,13 +559,13 @@
                     <div class="mb-3">
                         <p>Apakah warga dampingan memiliki KTP? </p>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value=TRUE>
+                            <input type="radio" name="ktp" class="form-check-input" value="true">
                             <label class="form-check-label">
                                 Ya
                             </label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value=TRUE>
+                            <input type="radio" name="ktp" class="form-check-input" value="false">
                             <label class="form-check-label">
                                 Tidak
                             </label>
