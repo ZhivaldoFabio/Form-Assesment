@@ -1,12 +1,14 @@
 // signup
-// const auth = getAuth(app);
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   // get user info
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;

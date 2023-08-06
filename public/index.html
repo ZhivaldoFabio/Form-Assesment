@@ -131,8 +131,11 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script> -->
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        import { getAuth } from "firebase/auth";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+        import {
+            getAuth,
+            onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -151,15 +154,19 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+        const auth = firebase.auth(app);
+
+        //update firestore settings
+        auth.settings({ timestampsInSnapshots: true });
+
 
     </script>
 
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="scripts/auth.js"></script>
-    <script src="scripts/index.js"></script>
+    <script type="module" src="scripts/auth.js"></script>
+    <script type="module" src="scripts/index.js"></script>
 
 </body>
 
