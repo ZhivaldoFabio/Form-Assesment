@@ -664,9 +664,6 @@
         </form>
 
     </div>
-
-    <!-- ==================================================================================================== -->
-
     <?php
     include 'connection.php';
     if (isset($_POST['submit'])) {
@@ -722,11 +719,11 @@
 
         $sql = "INSERT INTO warga_dampingan
         (nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah)
-        VALUES ('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', '$status', '$does_work', '$main_job', '$alt_job', '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', '$admission', '$release', '$daycare', '$main_after', '$alt_after');";
+        VALUES ('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', 'Belum Kawin', NULL, '-', NULL, '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', NULL, NULL, 'Daycare', NULL, NULL);";
 
         $result = pg_query($conn, $sql);
         if ($result) {
-            echo "Data Inserted Successfully";
+            echo "<script> location.href='HomePage.html'; </script>";
         } else {
             die(pg_last_error($conn));
         }

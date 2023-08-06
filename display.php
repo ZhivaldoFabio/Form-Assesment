@@ -12,8 +12,8 @@
 
   <div class="container">
     <button class="btn btn-primary m-5 ">
-      <a href="form_assesment.php" class="text-light link-underline link-underline-opacity-0">
-        Tambahkan WD
+      <a href="HomePage.html" class="text-light link-underline link-underline-opacity-0">
+        <- BACK
       </a>
     </button>
     <table class="table">

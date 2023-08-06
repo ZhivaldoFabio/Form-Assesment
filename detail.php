@@ -27,27 +27,6 @@ if ($result) {
     $release = $row['tanggal_keluar'];
     $daycare = $row['daycare_undergoes'];
 
-
-
-    echo '
-            <tr>
-            <th scope="row">' . $id . '</th>
-            <td>' . $name . '</td>
-            <td>' . $gender . '</td>
-            <td>' . $admission . '</td>
-            <td>' . $release . '</td>
-            <td>' . $daycare . '</td>
-            <td><input class="checkbox" type="checkbox" role="switch"></td>
-            <td>
-            <button type="button" class="btn btn-info"><a href="detail.php? detailid=' . $id . '" class="text-light link-underline link-underline-opacity-0">Detail</a></button>
-            <button type="button" class="btn btn-danger"><a href="delete.php? deleteid=' . $id . '" class="text-light link-underline link-underline-opacity-0">Delete</a></button>
-            </td>
-
-            
-            
-            
-            
-            </tr>';
   }
 }
 ?>
@@ -84,37 +63,37 @@ if ($result) {
       <tr>
         <td>Jenis Kelamin </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $gender </td>" ?>
 
       </tr>
       <tr>
         <td>Tempat, Tanggal Lahir </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $pob, $dob </td>" ?>
 
       </tr>
       <tr>
         <td>Alamat </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $address </td>" ?>
 
       </tr>
       <tr>
         <td>Agama </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $religion </td>" ?>
 
       </tr>
       <tr>
         <td>Pendidikan </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $education </td>" ?>
 
       </tr>
       <tr>
         <td> Status </td>
         <td>:</td>
-        <?php echo "<td> $name </td>" ?>
+        <?php echo "<td> $status </td>" ?>
 
       </tr>
       <tr>
@@ -212,6 +191,7 @@ if ($result) {
       <tr>
         <td>Apakah bekerja? </td>
         <td>:</td>
+        <?php echo "<td> $work </td>" ?>
 
       </tr>
       <tr>
