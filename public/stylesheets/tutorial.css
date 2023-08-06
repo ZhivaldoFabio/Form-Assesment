@@ -1,3 +1,18 @@
+.card-satunama {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 200px;
+}
+
+.card-satunama:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-satunama {
+    padding: 2px 16px;
+}
+
+
 .materialize-red {
     background-color: #e51c23 !important
 }
@@ -2125,17 +2140,21 @@
 .white-text {
     color: #fff !important
 }
+
 .satunama-1 {
+    background-color: #000000 !important
+}
+
+.satunama-2 {
+    background-color: #207E49 !important
+}
+
+.satunama-3 {
     background-color: #8EC191 !important
 }
-.satunama-2 {
 
-}
-.satunama-3 {
-
-}
 .satunama-4 {
-
+    background-color: #EEFFBB !important
 }
 
 .transparent {

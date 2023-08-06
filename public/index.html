@@ -14,7 +14,7 @@
 
 <body class="grey lighten-3">
     <!-- NAVBAR -->
-    <nav class="z-depth-0 satunama-1">
+    <nav class="z-depth-0 satunama-3">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo" style="height: 50px;">
                 <img src="assets/Logo_SATUNAMA_PNG.png" style="height: 50px; margin-top: 10px;" alt="Logo Satunama">
@@ -104,38 +104,47 @@
     </div>
 
     <!-- GUIDE LIST -->
-    <div class="container" style="margin-top: 40px;">
-        <ul class="collapsible z-depth-0 guides" style="border: none;">
-            <li>
-                <div class="collapsible-header grey lighten-4">Guide title</div>
-                <div class="collapsible-body white">Lorem ipsum dolor sit amet.</div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">Guide title</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">Guide title</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">Guide title</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
+    <div class="container" style="margin-top: 20px; display: flex;">
+        <a href="form_assesment.php">
+            <div class="card-satunama">
+                <img src="assets/form.png" alt="form" style="width:100%">
+                <div class="container-satunama">
+                    <h6 class="black-text"><b>Form Satunama</b></h6>
+                </div>
+            </div>
+        </a>
+        <a href="display.php">
+            <div class="card-satunama">
+                <img src="assets/view.png" alt="view" style="width:100%">
+                <div class="container-satunama">
+                    <h6 class="black-text"><b>View Data</b></h6>
+                </div>
+            </div>
+        </a>
 
-        </ul>
+        <!-- <div class="card-satunama">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container-satunama">
+                <h6><b>Form Satunama</b></h6>
+            </div>
+        </div>
+        <div class="card-satunama">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container-satunama">
+                <h6><b>Form Satunama</b></h6>
+            </div>
+        </div> -->
     </div>
 
     <!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script> -->
-    <script type="module">
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script>
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-        import {
-            getAuth,
-            onAuthStateChanged,
-        } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -150,16 +159,14 @@
             appId: "1:327603693254:web:d30b36cde75c15fa0919c7",
             measurementId: "G-V7VMNQLF62"
         };
-        firebase.initializeApp(config);
+        firebase.initializeApp(firebaseConfig);
 
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = firebase.auth(app);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-        //update firestore settings
-        auth.settings({ timestampsInSnapshots: true });
-
-
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
     </script>
 
 
