@@ -301,14 +301,14 @@
                         <label class="input-group-text" for="inputGroupSelect01">Ucapan/Tulisan</label>
                         <select class="form-select" id="inputGroupSelect01">
                             <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
-                            <option value="true">Ya</option>
-                            <option value="false">Tidak</option>
+                            <option value="1">Ya</option>
+                            <option value="0">Tidak</option>
                         </select>
                         <label class="input-group-text" for="inputGroupSelect01">Perilaku</label>
                         <select class="form-select" id="inputGroupSelect01">
                             <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
-                            <option value="true">Ya</option>
-                            <option value="false">Tidak</option>
+                            <option value="1">Ya</option>
+                            <option value="0">Tidak</option>
                         </select>
                     </div>
                 </div>
@@ -335,13 +335,13 @@
                 <div class="mb-3">
                     <label class="form-label">Apakah mengkonsumsi obat?</label>
                     <div class="form-check">
-                        <input type="radio" name="obat" class="form-check-input" value="true">
+                        <input type="radio" name="obat" class="form-check-input" value="1">
                         <label class="form-check-label">
                             Ya
                         </label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" name="obat" class="form-check-input" value="false">
+                        <input type="radio" name="obat" class="form-check-input" value="0">
                         <label class="form-check-label">
                             Tidak
                         </label>
@@ -412,13 +412,13 @@
                 <div class="mb-3">
                     <label class="form-label">Apakah bekerja?</label>
                     <div class="form-check">
-                        <input type="radio" name="bekerja" class="form-check-input" value="true">
+                        <input type="radio" name="bekerja" class="form-check-input" value="1">
                         <label class="form-check-label">
                             Ya
                         </label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" name="bekerja" class="form-check-input" value="false">
+                        <input type="radio" name="bekerja" class="form-check-input" value="0">
                         <label class="form-check-label">
                             Tidak
                         </label>
@@ -437,13 +437,13 @@
                 <div class="mb-3">
                     <label class="form-label">Apakah memiliki pekerjaan sampingan?</label>
                     <div class="form-check">
-                        <input type="radio" name="sampingan" class="form-check-input" value="true">
+                        <input type="radio" name="sampingan" class="form-check-input" value="1">
                         <label class="form-check-label">
                             Ya
                         </label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" name="sampingan" class="form-check-input" value="false">
+                        <input type="radio" name="sampingan" class="form-check-input" value="0">
                         <label class="form-check-label">
                             Tidak
                         </label>
@@ -559,13 +559,13 @@
                     <div class="mb-3">
                         <p>Apakah warga dampingan memiliki KTP? </p>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value="true">
+                            <input type="radio" name="ktp" class="form-check-input" value="1">
                             <label class="form-check-label">
                                 Ya
                             </label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" name="ktp" class="form-check-input" value="false">
+                            <input type="radio" name="ktp" class="form-check-input" value="0">
                             <label class="form-check-label">
                                 Tidak
                             </label>
@@ -577,13 +577,13 @@
                     <div class="mb-3">
                         <p>Apakah tercantum di Kartu Keluarga? </p>
                         <div class="form-check">
-                            <input type="radio" name="kk" class="form-check-input" value="true">
+                            <input type="radio" name="kk" class="form-check-input" value="1">
                             <label class="form-check-label">
                                 Ya
                             </label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" name="kk" class="form-check-input" value="false">
+                            <input type="radio" name="kk" class="form-check-input" value="0">
                             <label class="form-check-label">
                                 Tidak
                             </label>
@@ -722,7 +722,7 @@
 
         $sql = "INSERT INTO warga_dampingan
         (nama_lengkap, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat, agama, pendidikan, status, bekerja, perkerjaan_pokok, perkerjaan_sampingan, penghasilan, anggota_keluarga, aset_keluarga, adl, ekonomi, sosial, nik, asal_rujukan, tanggal_masuk, tanggal_keluar, daycare_undergoes, pekerjaan_pokok_sesudah, pekerjaan_sampingan_sesudah)
-        VALUES ('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', '$status', $does_work, '$main_job', '$alt_job', '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', '$admission', '$release', $daycare, '$main_after', '$alt_after');";
+        VALUES ('$name', '$gender', '$pob', '$dob', '$address', '$religion', '$education', '$status', '$does_work', '$main_job', '$alt_job', '$income', '$fam_member', '$assets', '$adl', '$economy', '$social', '$nik', '$source', '$admission', '$release', '$daycare', '$main_after', '$alt_after');";
 
         $result = pg_query($conn, $sql);
         if ($result) {

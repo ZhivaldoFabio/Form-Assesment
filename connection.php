@@ -7,9 +7,11 @@ $password = '@#Keswa123';
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-try {
-    $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+if (!$conn) {
+    echo "Failed to connect to PostgreSQL.";
+    exit;
+
 }
+
+
 ?>

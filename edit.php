@@ -1,6 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+include 'connection.php';
+if (isset($_POST['submit'])) {
+    // $ = $_POST[''];
+    $name = $_POST['name'] ?? null;
+    $gender = $_POST['gender'] ?? null;
+    $pob = $_POST['pob'] ?? null;
+    $dob = $_POST['dob'] ?? null;
+    $address = $_POST['address'] ?? null;
+    $religion = $_POST['agama'] ?? null;
+    $education = $_POST['Pendidikan'] ?? null;
+    $status = $_POST['relation'] ?? null;
+    // $melihat = $_POST['Asses melihat'];
+    // $mendengar = $_POST['Asses mendengar'];
+    // $berjalan = $_POST['Asses berjalan'];
+    // $rawat = $_POST['Asses rawat'];
+    // $komunikasi = $_POST['Asses komunikasi'];
+    $diagnose = $_POST['diagnose'] ?? null;
+    $menyakiti = $_POST['menyakiti'] ?? null;
+    $menyendiri = $_POST['menyendiri'] ?? null;
+    $melarikan = $_POST['melarikan'] ?? null;
+    // $gejala = $_POST['Asses gejala'];
+    $obat = $_POST['obat'] ?? null;
+    // $frekuensi = $_POST['frekuensi'];
+    $pengobatan = $_POST['pengobatan'] ?? null;
+    $rumahsakit = $_POST['rumahsakit'] ?? null;
+    $permasalahan = $_POST['permasalahan'] ?? null;
+    $does_work = $_POST['bekerja'] ?? null;
+    $main_job = $_POST['pekerjaan_pokok'] ?? null;
+    $alt_job = $_POST['sampingan'] ?? null;
+    $income = $_POST['penghasilan'] ?? null;
+    $fam_member = $_POST['jumlah_anggota'] ?? null;
+    $assets = $_POST['aset'] ?? null;
+    $bantuan = $_POST['bantuan'] ?? null;
+    $asuransi = $_POST['asuransi'] ?? null;
+    $komunitas = $_POST['komunitas'] ?? null;
+    $dukungan = $_POST['dukungan'] ?? null;
+    $ktp = $_POST['ktp'] ?? null;
+    $kk = $_POST['kk'] ?? null;
+    $pernahwork = $_POST['pernahwork'] ?? null;
+    $gaji = $_POST['gaji'] ?? null;
+    $medis = $_POST['medis'] ?? null;
+    $adl = $_POST['adl'] ?? null;
+    $economy = $_POST['ekonomi'] ?? null;
+    $social = $_POST['sosial'] ?? null;
+    $nik = $_POST['nik'] ?? null;
+    $source = $_POST['asal_rujukan'] ?? null;
+    $admission = date('Y-M-D');
+    $release = null;
+    $daycare = $_POST['daycare'] ?? null;
+    $main_after = $_POST['pokok_sesudah'] ?? null;
+    $alt_after = $_POST['sampingan_sesudah'] ?? null;
+
+    $sql = "UPDATE public.warga_dampingan
+    SET nama_lengkap=$name, jenis_kelamin=$gender, tempat_lahir=$pob, tanggal_lahir=$dob, alamat=$address, agama='-', pendidikan='SMA', status='Belum Kawin', bekerja=NULL, perkerjaan_pokok='-', perkerjaan_sampingan=NULL, penghasilan='-', anggota_keluarga='-', aset_keluarga='-', adl='-', ekonomi='-', sosial='-', nik='3175071004940002', asal_rujukan='RSJ GRHASIA', tanggal_masuk='2022-05-21', tanggal_keluar=NULL, daycare_undergoes='Daycare', pekerjaan_pokok_sesudah=NULL, pekerjaan_sampingan_sesudah=NULL
+    WHERE id_wd=30;";
+    
+    $result = pg_query($conn, $sql);
+    if ($result) {
+        echo "Data Inserted Successfully";
+    } else {
+        die(pg_last_error($conn));
+    }
+}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

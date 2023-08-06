@@ -8,6 +8,7 @@
     <title>Login - Form Assesment</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="scriptsheet" href="scriptsheet.js">
+
 </head>
 
 <body class="logpage">
@@ -25,6 +26,7 @@
                 <label>Password</label>
             </div>
             <div class="pass">Forgot Password?</div>
+            <button onclick="signIn()">Sign In</button>
             <input class="inputlogin" name="submit_login" type="submit" value="Login">
             <div class="signup_link">
                 Not a Care Giver? <a href="www.satunama.org">Contact Support.</a>
@@ -51,7 +53,26 @@
 
         </form>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js"></script>
 
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5x3fDbgMX18By8TGEzcn0TYz2Evr2owU",
+            authDomain: "satunama-assesments.firebaseapp.com",
+            projectId: "satunama-assesments",
+            storageBucket: "satunama-assesments.appspot.com",
+            messagingSenderId: "327603693254",
+            appId: "1:327603693254:web:d30b36cde75c15fa0919c7",
+            measurementId: "G-V7VMNQLF62" // This line is optional
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 
 </html>
