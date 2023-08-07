@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     $sql = "UPDATE public.warga_dampingan
     SET nama_lengkap=$name, jenis_kelamin=$gender, tempat_lahir=$pob, tanggal_lahir=$dob, alamat=$address, agama='-', pendidikan='SMA', status='Belum Kawin', bekerja=NULL, perkerjaan_pokok='-', perkerjaan_sampingan=NULL, penghasilan='-', anggota_keluarga='-', aset_keluarga='-', adl='-', ekonomi='-', sosial='-', nik='3175071004940002', asal_rujukan='RSJ GRHASIA', tanggal_masuk='2022-05-21', tanggal_keluar=NULL, daycare_undergoes='Daycare', pekerjaan_pokok_sesudah=NULL, pekerjaan_sampingan_sesudah=NULL
     WHERE id_wd=30;";
-    
+
     $result = pg_query($conn, $sql);
     if ($result) {
         echo "Data Inserted Successfully";
@@ -79,8 +79,17 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <!-- ============================== JUDULNYA DISINI ============================== -->
-        <div class="heading">
-            <h1 class="title display-3">Form Assesment</h1>
+        <div class="heading row">
+            <div class="col-8">
+                <h1 class="title display-3">Form Assesment</h1>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary m-5 " style="float: right;">
+                    <a href="HomePage.html" class="text-light link-underline link-underline-opacity-0">
+                        <- BACK </a>
+                </button>
+            </div>
+
             <hr width="100%">
         </div>
         <!-- ============================== FORM NYA DISINI ============================== -->
@@ -89,14 +98,14 @@ if (isset($_POST['submit'])) {
                 <!-- ==================================================================================================== -->
                 <div class="mb-3">
                     <label class="form-label">NIK</label>
-                    <input type="text" name="nik" placeholder="Masukkan NIK" class="form-control" required>
+                    <input type="text" name="nik" placeholder="Masukkan NIK" class="form-control" value="<?php echo '71200608' ?>" required>
                 </div>
 
 
                 <!-- ==================================================================================================== -->
                 <div class="mb-3">
                     <label class="form-label">Nama Lengkap</label>
-                    <input type="text" name="name" placeholder="Masukkan Nama Lengkap" class="form-control" required>
+                    <input type="text" name="name" placeholder="Masukkan Nama Lengkap" class="form-control" value="<?php echo 'Zhivaldo Fabio' ?>" required>
                 </div>
 
 
@@ -107,7 +116,7 @@ if (isset($_POST['submit'])) {
                     <div class="option">
                         <div class="select-box">
                             <select class="form-select" name="gender" id="jenis_kelamin" required>
-                                <option class="pilihan" value="" disabled selected hidden>Pilihan</option>
+                                <option class="pilihan" value="Laki-laki" disabled selected hidden>Laki-laki</option>
                                 <option value="Laki-laki">Pria</option>
                                 <option value="Perempuan">Wanita</option>
                                 <option value="Lainnya">Lainnya</option>
@@ -122,9 +131,9 @@ if (isset($_POST['submit'])) {
                     <label class="form-label">Tempat, Tanggal Lahir</label>
                     <div class="input-group">
                         <span class="input-group-text">Tempat</span>
-                        <input type="text" name="pob" placeholder="Masukkan Tempat Lahir" class="form-control" required>
+                        <input type="text" name="pob" placeholder="Masukkan Tempat Lahir" class="form-control" value="<?php echo 'Yogyakarta' ?>" required>
                         <span class="input-group-text">Tanggal lahir</span>
-                        <input type="date" name="dob" placeholder="Masukkan Tanggal Lahir" class="form-control" required>
+                        <input type="date" name="dob" placeholder="Masukkan Tanggal Lahir" class="form-control" value="01/08/2023" required>
                     </div>
 
                 </div>

@@ -26,7 +26,6 @@ if ($result) {
     $admission = $row['tanggal_masuk'];
     $release = $row['tanggal_keluar'];
     $daycare = $row['daycare_undergoes'];
-
   }
 }
 ?>
@@ -43,9 +42,21 @@ if ($result) {
 <body>
   <div class="container">
     <!-- ============================== JUDULNYA DISINI ============================== -->
-    <div class="heading">
-      <h1 class="title display-3">Detail Warga Dampingan</h1>
+    <div class="heading row">
+      <div class="col-10">
+        <h1 class="title display-3">Detail Warga Dampingan</h1>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-info m-5" style="float: right;">
+          <a href="edit.php" class="text-light link-underline link-underline-opacity-0">
+            EDIT
+          </a>
+        </button>
+      </div>
+
+
       <hr width="100%">
+
     </div>
     <!-- ==================================================================================================== -->
 
@@ -286,4 +297,3 @@ if ($result) {
 
 
 </body>
-
